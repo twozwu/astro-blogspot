@@ -1,0 +1,17 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import TestVue from "../components/Test.vue";
+import TestAstro from "../components/Test.astro";
+import Util from "@/services/util.vue";
+import { storage } from "@/services/global.ts";
+---
+
+<DefaultLayout>
+  <TestVue client:only="vue" />
+  <TestAstro />
+  <Util client:load :storage="storage" />
+   component{storage}
+</DefaultLayout>
+<sript>
+  window.alert('abc')
+</sript>

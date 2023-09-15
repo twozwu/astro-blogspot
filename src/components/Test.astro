@@ -1,0 +1,12 @@
+---
+import { storage } from "@/services/global.ts";
+const name = "Astro";
+const object = { ...storage };
+---
+
+<div>
+  這是test.astro
+  <h1>Hello {name}!</h1>
+  {object}
+  <!-- Outputs <h1>Hello Astro!</h1> -->
+</div>
