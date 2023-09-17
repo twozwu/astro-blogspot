@@ -2,6 +2,7 @@
 import BaseHead from "../components/Blocks/BaseHead.astro";
 import Header from "../components/Blocks/Header.astro";
 import Footer from "../components/Blocks/Footer.astro";
+import Offcanvas from "../components/Blocks/vue/Offcanvas.vue";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 ---
 
@@ -34,15 +35,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <Header title={SITE_TITLE} />
-    <select data-choose-theme>
-      <option value="light">Default</option>
-      <option value="dark">Dark</option>
-      <option value="aqua">Aqua</option>
-    </select>
+    <Header />
     <main>
       <slot />
       <!-- your content from src/pages/index.astro is injected here -->
     </main>
+    <Footer />
   </body>
 </html>

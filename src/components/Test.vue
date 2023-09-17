@@ -15,14 +15,33 @@
             >Select a date</label
         >
     </div>
+    <div
+        id="g_id_onload"
+        data-client_id="74791824651-ridnlmtmsr9n73bcrli0r3uq3pn8e5j7.apps.googleusercontent.com"
+        data-context="signin"
+        data-ux_mode="popup"
+        data-login_uri="http://localhost:4321/"
+        data-auto_prompt="false"
+    ></div>
+    <div
+        class="g_id_signin"
+        data-type="standard"
+        data-shape="rectangular"
+        data-theme="outline"
+        data-text="signin_with"
+        data-size="large"
+        data-logo_alignment="left"
+    ></div>
 </template>
 
 <script setup>
 import { onMounted } from "vue";
-import { Datepicker, Input, initTE } from "tw-elements";
+import { useRouter, useRoute } from "vue-router";
+const route = useRoute();
+console.log(route);
+
 
 onMounted(() => {
-    initTE({ Datepicker, Input });
 });
 </script>
 

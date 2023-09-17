@@ -1,24 +1,17 @@
-<template>{{ storage }}asdfasdfsad
-{{  props.storage }}
-</template>
+<template>this is theme:{{ theme }}</template>
 
 <script setup>
 import { onMounted, ref } from "vue";
-import { storage } from "@/services/global.ts";
+import { theme } from "./store";
+import { useStore } from "@nanostores/vue";
 
-const props = defineProps(['storage']);
-let theme = ref({});
-const translation  = ref();
+// read the store value with the `useStore` hook
+const $theme = useStore(theme);
+
+const props = defineProps(["storage"]);
 onMounted(() => {
-    theme.value = { ...localStorage };
-    // storage = { ...localStorage };
-    // theme.value = window.localeStorage.getItem("theme");
-    // take the correct translation from all translations
-    // translation.value = JSON.parse(
-    //     translations[
-    //         Object.keys(translations).find((key) => key.includes(userLocale))
-    //     ]
-    // );
+    theme.set({ ...localStorage }); // 寫入用 set
+    console.log($theme.value); // 讀取使用 $theme
 });
 defineExpose({ theme });
 </script>

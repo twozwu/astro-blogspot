@@ -1,12 +1,15 @@
 ---
-import { storage } from "@/services/global.ts";
-const name = "Astro";
-const object = { ...storage };
+const foregroundColor = "rgb(221 243 228)";
+const backgroundColor = "rgb(24 121 78)";
+const message = "Astro is awesome!";
 ---
 
-<div>
-  這是test.astro
-  <h1>Hello {name}!</h1>
-  {object}
-  <!-- Outputs <h1>Hello Astro!</h1> -->
-</div>
+<style define:vars={{ textColor: foregroundColor, backgroundColor }}>
+  h1 {
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+  }
+</style>
+
+<script define:vars={{ message }}>
+</script>

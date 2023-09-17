@@ -1,0 +1,13 @@
+---
+const search = Astro.url.searchParams.get("search")! || "";
+console.log(search);
+---
+
+{search}
+<script is:inline>
+let params = new URL(document.location).searchParams;
+let name = params.get("search"); // is the string "Jonathan Smith".
+
+// let params = document.location;
+console.log(params.getAll('search'));
+</script>
