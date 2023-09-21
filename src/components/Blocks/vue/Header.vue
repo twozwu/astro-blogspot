@@ -84,18 +84,16 @@
             </div>
         </div>
     </header>
-    <Offcanvas ref="refOffcanvas" />
 </template>
 
 <script setup>
 import { SITE_TITLE } from "@/consts";
-import Offcanvas from "./Offcanvas.vue";
 import { onMounted, ref } from "vue";
 
-const refOffcanvas = ref(null);
-const toggleDrawer = () => {
-    refOffcanvas.value.toggleDrawer();
-}
+// const refOffcanvas = ref(null);
+// const toggleDrawer = () => {
+//     refOffcanvas.value.toggleDrawer();
+// }
 </script>
 
 <style>

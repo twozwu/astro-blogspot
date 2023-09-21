@@ -19,7 +19,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
   </head>
   <body>
     <Header />
-    <main>
+    <main class="flex">
+      <Offcanvas ref="refOffcanvas" />
       <slot />
       <!-- your content from src/pages/index.astro is injected here -->
     </main>
